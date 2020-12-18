@@ -31,6 +31,7 @@ public class LinkageViewPagerLayout extends FrameLayout {
     private BasePagerAdapter basePagerAdapter;
     private ScalePagerAdapter adapter;
 
+
     public LinkageViewPagerLayout(@NonNull Context context) {
         this(context, null);
     }
