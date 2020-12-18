@@ -177,7 +177,7 @@ public class LinkageViewPagerLayout extends FrameLayout {
         });
     }
 
-    private void setCurrentItem(int position, ViewPager contentViewPager) {
+    public void setCurrentItem(int position, ViewPager contentViewPager) {
         scale_viewpager.setCurrentItem(position);
         contentViewPager.setCurrentItem(position);
     }
