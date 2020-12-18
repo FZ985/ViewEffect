@@ -25,7 +25,7 @@ import java.util.List;
  * Date: 2020-12-18 13:00
  */
 public class LinkageViewPagerLayout extends FrameLayout {
-    private ViewPager scale_viewpager;
+    private NoScrollViewPager scale_viewpager;
     private ImageView scale_more_point;
     private List<View> viewList;
     private BasePagerAdapter basePagerAdapter;
@@ -175,5 +175,10 @@ public class LinkageViewPagerLayout extends FrameLayout {
                 }
             }
         });
+    }
+
+    private void setCurrentItem(int position, ViewPager contentViewPager) {
+        scale_viewpager.setCurrentItem(position);
+        contentViewPager.setCurrentItem(position);
     }
 }
