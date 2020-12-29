@@ -46,6 +46,11 @@ public class MaigcAcivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         init();
+        binding.remove.setOnClickListener(v -> {
+//            mDataList.remove(0);
+//            commonFragmentAdapter.remove(0);
+//            commonFragmentAdapter.notifyDataSetChanged();
+        });
     }
 
     private void init() {
@@ -53,12 +58,14 @@ public class MaigcAcivity extends AppCompatActivity {
         initTop();
     }
 
+    private CommonFragmentAdapter commonFragmentAdapter;
+
     private void initAdapter() {
         List<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < mDataList.size(); i++) {
             fragments.add(HomeChildFragment.instance(i));
         }
-        binding.magicVp.setAdapter(new CommonFragmentAdapter(getSupportFragmentManager(), fragments));
+        binding.magicVp.setAdapter(commonFragmentAdapter = new CommonFragmentAdapter(getSupportFragmentManager(), fragments));
     }
 
     private void initTop() {
